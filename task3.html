@@ -1,0 +1,83 @@
+<script>
+    // 1
+
+    function isSimple (n) {
+        if (n === 1 || n === 0) {
+            return false;
+        } else {
+            for(let i = 2; i < n; i++) {
+                if(n % i === 0) {
+                    return false;
+                }
+            }
+            return true;  
+        }
+    }
+
+    let i = 2;
+
+    while (i < 100) {
+        if (isSimple(i)) {
+            console.log(i);
+        }
+       
+        i++;        
+    }
+    
+    // 2, 3
+    
+    let cart = [];
+
+    function createProd() { // создаем товар
+        let prod = {};
+        let name = prompt('Введите наименование товара');
+        let price = +prompt('Введите стоимость товара');
+        let count = +prompt('Введите количество товара');
+
+        if (name != '' && isNaN(name)) {
+            prod.name = name;
+        }
+        if (!isNaN(price) && price != '') {
+            prod.price = price.toFixed(2);
+        }
+        if (!isNaN(count) && count != '') {
+            prod.count = count;
+        }
+
+        return prod;
+    }
+
+    function createCart() { // добавляем товары в корзину
+        let answ = true;
+        while (answ) {
+            cart.push(createProd());
+            answ = confirm("Хотите продолжить?");
+        }
+        
+    }
+
+    function sumPrice(arr) { // подсчитываем суммарную стоимость товаров
+        let sum = 0;
+
+        for (const i of arr) {
+            sum += i.price * i.count;
+        }
+
+        return sum;
+    }
+
+    createCart();
+    console.log(`Стоимость товаров в корзине составляет: ${sumPrice(cart)}$`);
+
+    // 4 
+
+    for (let i = 0; i < 10; console.log(i++));
+
+    // 5
+
+    let str = '';
+    for (let i = 0; i < 20; i++) {
+        console.log(str += 'x');       
+    }
+
+</script>
