@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createObj() {
+            let num = prompt('Введите число от 0 до 999');
+            let obj = {};
+
+            if (num < 0 || num > 999) {
+                console.log('Введено неправильное число');
+                return obj;
+            }
+            if (num[num.length - 1]) {
+                obj['единицы'] = num[num.length - 1];
+            }
+            if (num[num.length - 2]) {
+                obj['десятки'] = num[num.length - 2];
+            }
+            if (num[num.length - 3]) {
+                obj['сотни'] = num[num.length - 3];
+            }
+
+            return obj;
+        }
+        
+        createObj();
+    </script>
+</body>
+</html>
