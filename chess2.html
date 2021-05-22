@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="chess-style.css">
+</head>
+<body>
+    <script>
+
+        function createElem(parent, elem, name, text) { 
+            let parentName = document.querySelector(parent);
+            let element = document.createElement(elem);
+            element.classList.add(name);
+            if (text) {
+                element.innerHTML = text;
+            }
+            parentName.append(element);
+        }
+
+        function getFigure(arr, url) {
+            for (let i = 0; i < arr.length; i++) { 
+                let img = document.createElement('img');
+                img.src = url;
+                arr[i].append(img);         
+            }
+        }
+
+        createElem('body', 'div', 'block');
+        createElem('.block', 'table', 'table');
+
+        for (let i = 0; i < 8; i++) {
+            createElem('.table', 'tr', `row${i + 1}`);
+            for (let j = 0; j < 8; j++) {
+                createElem(`.row${i + 1}`, 'td', `col${j + 1}`);   
+            }
+        }
+
+        let trs = document.querySelectorAll('tr');
+        let fig = [
+            {
+                pos: trs[1].childNodes,
+                url: 'img/pawn.svg'
+            },
+            {
+                pos: trs[6].childNodes,
+                url: 'img/pawn-w.svg'
+            },
+            {
+                pos: [trs[0].childNodes[2], trs[0].childNodes[5]],
+                url: 'img/bishop.svg'
+            },
+            {
+                pos: [trs[7].childNodes[2], trs[7].childNodes[5]],
+                url: 'img/bishop-w.svg'
+            },
+            {
+                pos: [trs[0].childNodes[4]],
+                url: 'img/king.svg'
+            },
+            {
+                pos: [trs[7].childNodes[4]],
+                url: 'img/king-w.svg'
+            },
+            {
+                pos: [trs[0].childNodes[1], trs[0].childNodes[6]],
+                url: 'img/knight.svg'
+            },
+            {
+                pos: [trs[7].childNodes[1], trs[7].childNodes[6]],
+                url: 'img/knight-w.svg'
+            },
+            {
+                pos: [trs[0].childNodes[3]],
+                url: 'img/queen.svg'
+            },
+            {
+                pos: [trs[7].childNodes[3]],
+                url: 'img/queen-w.svg'
+            },
+            {
+                pos: [trs[0].childNodes[0], trs[0].childNodes[7]],
+                url: 'img/rook.svg'
+            },
+            {
+                pos: [trs[7].childNodes[0], trs[7].childNodes[7]],
+                url: 'img/rook-w.svg'
+            }
+        ];
+            
+        for (let i = 0; i < fig.length; i++) {
+            getFigure(fig[i].pos, fig[i].url);           
+        }
+        
+    </script>
+</body>
+</html>

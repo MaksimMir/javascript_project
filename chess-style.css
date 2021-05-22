@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.block {
+    width: 600px;
+    height: 600px;
+    margin: 30px auto;
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 50px;
+}
+
+td {
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+img {
+    height: 40px;
+}
+
+tr:nth-child(odd) td:nth-child(2n) {
+    background-color: rgb(47, 47, 47);
+}
+
+tr:nth-child(2n) td:nth-child(odd) {
+    background-color: rgb(47, 47, 47);
+}
