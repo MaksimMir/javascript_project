@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+}
+
+.smal-img {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    height: 500px;
+}
+
+.big-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    box-sizing: border-box;
+    height: 500px;
+    box-shadow: 0 0 20px rgb(231, 231, 231);
+}
+
+.big-img img {
+    height: 100%;
+}
+
+.smal-img img {
+    height: 200px;
+    cursor: pointer;
+}
+
+img:first-child {
+    align-self: flex-start;
+}
+
+img:nth-child(2) {
+    align-self: center;
+}
+
+img:last-child {
+    align-self: flex-end;
+}
+
+.cart {
+    width: 100%;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+.cart_element {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid rgb(185, 53, 53);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.cart_tittle {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    width: 200px;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.cart_text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    color: dimgrey;
+    width: 300px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.cart_price {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    color: rgb(177, 52, 52);
+    font-weight: 900;
+    width: 100px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.catalog {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    text-align: left;
+    background-color: rgb(250, 250, 250);
+}
+
+.product_card-img {
+    height: 360px;
+
+}
+
+.product_card-text {
+    padding: 25px 18px 20px;    
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 40px;
+    border-radius: 4px;
+    background-color: rgb(219, 63, 94);
+    font-size: 17px;
+    color: rgb(199, 199, 226);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(218, 29, 66);
+    box-shadow: 0 0 10px rgb(219, 63, 94);
+}
+
+.carousel {
+    position: relative;
+    height: 500px;
+}
+
+.slider-box {
+    margin: 20px auto;
+    width: 300px;
+    height: 420px;
+    overflow: hidden;
+}
+
+.slider-line {
+    display: flex;
+}
+
+.slider-line img {
+    height: 420px;
+}
+
+.click {
+    position: absolute;
+    top: 40%;
+    padding: 7px;
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid rgb(98, 98, 98);
+    background-color: lavender;
+}
+
+.click:hover {
+    background-color: indigo;
+    color: lavender;
+}
+
+.prev {
+    left: 450px;
+}
+
+.next {
+    right: 450px;
+}
